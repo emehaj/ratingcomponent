@@ -1,0 +1,136 @@
+:root {
+    /* Primary */
+    --orange500: hsl(25, 97%, 53%);
+
+    /* Neutral */
+    --white: hsl(0, 100%, 100%);
+    --grey500: hsl(217, 12%, 63%);
+    --grey800: hsl(213, 19%, 22%);
+    --grey900: hsl(213, 19%, 18%);
+    --grey950: hsl(216, 12%, 8%);
+    font-size: 15px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    color: var(--grey500);
+    font-family: "Overpass", sans-serif;
+    background-color: var(--grey950);
+    padding: 70px 20px;
+}
+
+.none {
+    display: none;
+}
+
+main {
+    background-color: var(--grey900);
+    padding: 30px;
+    border-radius: 20px;
+
+    h1 {
+        color: var(--white);
+    }
+
+    & > .rate {
+        display: grid;
+        gap: 20px;
+
+        & > .star {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            display: grid;
+            place-items: center;
+            background-color: var(--grey800);
+
+            & > img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        & > p {
+            width: 100%;
+            max-width: 325px;
+        }
+
+        & > .numbers {
+            display: flex;
+            justify-content: space-between;
+
+            & > .num {
+                width: 50px;
+                height: 50px;
+                background-color: var(--grey800);
+                border-radius: 100%;
+                display: grid;
+                place-items: center;
+                font-weight: bold;
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--grey950);
+                    background-color: var(--orange500);
+                }
+            }
+            & > .active {
+                color: var(--grey950);
+                background-color: var(--white);
+            }
+        }
+
+        & > button {
+            font-size: 1.15rem;
+            color: var(--grey950);
+            background-color: var(--orange500);
+            padding: 13px 0;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+                background-color: var(--white);
+            }
+        }
+    }
+
+    & > .result {
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+
+        & > .score {
+            color: var(--orange500);
+            background-color: var(--grey800);
+            padding: 8px 30px;
+            border-radius: 30px;
+        }
+
+        & > :last-child {
+            width: 100%;
+            max-width: 340px;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        padding: 30px 20px;
+
+        .rate > .numbers > .num {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
